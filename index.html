@@ -53,18 +53,11 @@
 
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-        html { 
-            scroll-behavior: smooth; 
-            scroll-padding-top: var(--header-height);
-        }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
 
         body {
-            background: var(--bg-main);
-            color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
-            overflow-x: hidden;
-            cursor: none;
-            transition: background 0.4s ease, color 0.4s ease;
+            background: var(--bg-main); color: var(--text-main); font-family: 'Outfit', sans-serif;
+            overflow-x: hidden; cursor: none; transition: background 0.4s ease, color 0.4s ease;
         }
 
         body::before {
@@ -115,12 +108,7 @@
         .mobile-nav-overlay.active a { transform: translateY(0); opacity: 1; }
         .mobile-nav-overlay a:hover { color: var(--cyan); letter-spacing: 6px; }
 
-        section { 
-            padding: clamp(80px, 10vh, 120px) 5%; 
-            position: relative; 
-            min-height: 100vh;
-            display: flex; flex-direction: column; justify-content: center;
-        }
+        section { padding: clamp(80px, 10vh, 120px) 5%; position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
         
         .hero { min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: var(--hero-bg); padding: 120px 5% 60px; transition: background 0.4s; }
         .hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
@@ -150,7 +138,7 @@
         .scroll-mouse-dot { width: 4px; height: 8px; border-radius: 2px; background: var(--cyan); animation: scrollDown 2s infinite; }
         @keyframes scrollDown { 0%{transform:translateY(0);opacity:1} 100%{transform:translateY(15px);opacity:0} }
 
-        .magnetic-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 45px; font-size: .95rem; color: #fff; text-decoration: none; font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 50px; background: linear-gradient(135deg, var(--navy), var(--teal)); border: 1px solid var(--cyan); position: relative; overflow: hidden; z-index: 10; box-shadow: 0 10px 30px rgba(72,169,197,.2); transition: box-shadow .3s; }
+        .magnetic-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 45px; font-size: .95rem; color: #fff; text-decoration: none; font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 50px; background: linear-gradient(135deg, var(--navy), var(--teal)); border: 1px solid var(--cyan); position: relative; overflow: hidden; z-index: 10; box-shadow: 0 10px 30px rgba(72,169,197,.2); transition: box-shadow .3s; border: none; outline: none; cursor: pointer; }
         .magnetic-btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent); transform: translateX(-100%); transition: transform .5s; z-index: -1; }
         .magnetic-btn:hover::before { transform: translateX(100%); }
         .magnetic-btn:hover { box-shadow: 0 0 40px rgba(0,240,255,.4); }
@@ -179,7 +167,7 @@
         #showcase .sec-header { margin-top: var(--header-height); padding: 0 5%; }
         .showcase-wrapper { width: 100%; overflow: hidden; padding: 20px 5%; }
         .showcase-grid { display: flex; flex-wrap: nowrap; gap: 30px; width: max-content; padding-right: 15vw; }
-        .showcase-card { width: 380px; flex-shrink: 0; background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: 24px; padding: 40px 25px; text-align: center; transition: all .4s; position: relative; overflow: hidden; transform-style: preserve-3d; }
+        .showcase-card { width: 380px; flex-shrink: 0; background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: 24px; padding: 40px 25px; text-align: center; transition: all .4s; position: relative; overflow: hidden; transform-style: preserve-3d; cursor: pointer; }
         .showcase-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 0%, rgba(0,240,255,.1) 0%, transparent 60%); opacity: 0; transition: opacity .4s; }
         .showcase-card:hover { border-color: var(--cyan); box-shadow: 0 20px 50px rgba(0,240,255,.1); z-index: 2; }
         .showcase-card:hover::before { opacity: 1; }
@@ -201,7 +189,7 @@
         .why-us-item p { color: var(--text-main); font-size: .9rem; line-height: 1.6; }
 
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .srv-card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px 20px; transition: all .4s; position: relative; overflow: hidden; transform-style: preserve-3d; }
+        .srv-card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px 20px; transition: all .4s; position: relative; overflow: hidden; transform-style: preserve-3d; cursor: pointer; }
         .srv-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--teal), var(--cyan)); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
         .srv-card:hover::before { transform: scaleX(1); }
         .srv-card:hover { border-color: rgba(0,240,255,.3); box-shadow: 0 15px 40px rgba(0,240,255,.08); z-index: 2; }
@@ -209,11 +197,59 @@
         .srv-card:hover .srv-icon { background: var(--cyan); color: #fff; border-radius: 50%; transform: translateZ(35px) rotate(360deg); }
         .srv-card h3 { font-size: 1.1rem; margin-bottom: 12px; transform: translateZ(15px); }
         .srv-list { list-style: none; display: flex; flex-direction: column; gap: 8px; transform: translateZ(10px); }
-        .srv-list li { display: flex; align-items: flex-start; gap: 8px; color: var(--text-muted); font-size: .85rem; line-height: 1.5; }
+        .srv-list li { display: flex; align-items: flex-start; gap: 8px; color: var(--text-muted); font-size: .85rem; line-height: 1.5; pointer-events: none; }
         .srv-list li::before { content: '\f061'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--cyan); font-size: .65rem; margin-top: 5px; }
         .card-num { position: absolute; bottom: 5px; right: 15px; font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; color: rgba(72,169,197,.04); transition: color .4s; pointer-events: none; }
         body.light-theme .card-num { color: rgba(31,43,91,0.06); }
         .srv-card:hover .card-num { color: rgba(0,240,255,.08); }
+
+        .upcoming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .up-card { background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all .4s; position: relative; overflow: hidden; }
+        .up-card:hover { border-color: var(--cyan); box-shadow: 0 15px 40px rgba(0,240,255,.08); transform: translateY(-10px); }
+        .up-logo { width: 80px; height: 80px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(72,169,197,0.1), rgba(0,240,255,0.1)); border: 1px solid rgba(0,240,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--cyan); transition: all .4s; }
+        .up-card:hover .up-logo { background: var(--cyan); color: #fff; box-shadow: 0 0 20px rgba(0,240,255,0.5); transform: scale(1.1); }
+        .up-date { display: inline-block; padding: 5px 15px; border-radius: 20px; background: rgba(255,255,255,0.05); color: var(--teal); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        body.light-theme .up-date { background: rgba(31,43,91,0.05); border-color: rgba(31,43,91,0.1); }
+        .up-card h3 { font-size: 1.3rem; margin-bottom: 25px; color: var(--heading-color); line-height: 1.4; }
+        .up-btn { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); padding: 12px 25px; border-radius: 30px; font-family: 'Syne', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .up-card:hover .up-btn { background: var(--cyan); border-color: var(--cyan); color: #000; font-weight: 700; }
+
+        .conf-modal-overlay, .srv-modal-overlay { position: fixed; inset: 0; background: rgba(2,4,8,.95); backdrop-filter: blur(20px); z-index: 100000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 20px; }
+        body.light-theme .conf-modal-overlay, body.light-theme .srv-modal-overlay { background: rgba(255,255,255,.95); }
+        .conf-modal-overlay.active, .srv-modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .conf-modal-box, .srv-modal-box { background: var(--bg-alt); border: 1px solid var(--cyan); border-radius: 24px; max-width: 600px; width: 100%; padding: 40px; position: relative; box-shadow: 0 20px 60px rgba(0,240,255,0.1); max-height: 90vh; overflow-y: auto; }
+        .conf-modal-close, .srv-modal-close { position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; transition: color 0.3s; }
+        .conf-modal-close:hover, .srv-modal-close:hover { color: var(--cyan); }
+        
+        .conf-modal-header { text-align: center; margin-bottom: 30px; }
+        .conf-modal-icon { font-size: 2.5rem; color: var(--cyan); margin-bottom: 15px; }
+        .conf-modal-header h3 { font-size: 1.8rem; color: var(--heading-color); line-height: 1.2; }
+        .conf-modal-body p { color: var(--text-muted); line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem; text-align: center; }
+        .conf-modal-details { list-style: none; display: flex; flex-direction: column; gap: 15px; margin-bottom: 35px; background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .conf-modal-details li { display: flex; align-items: center; gap: 15px; color: var(--text-main); font-size: 1rem; }
+        .conf-modal-details i { color: var(--teal); font-size: 1.2rem; width: 25px; text-align: center; }
+        .conf-modal-footer { text-align: center; }
+
+        .srv-modal-box h3 { font-size: 1.8rem; color: var(--heading-color); margin-bottom: 15px; text-align: center; }
+        .srv-modal-box > p { color: var(--text-muted); line-height: 1.7; text-align: center; margin-bottom: 25px; font-size: 1rem; }
+        .sm-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .sm-gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); transition: transform 0.3s; }
+        .sm-gallery img:hover { transform: scale(1.02); border-color: var(--cyan); }
+        .sm-process { background: rgba(0,240,255,0.03); border: 1px solid rgba(0,240,255,0.15); padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+        .sm-process h4 { color: var(--cyan); margin-bottom: 10px; font-size: 1.1rem; }
+        .sm-process p { color: var(--text-main); font-size: 0.95rem; line-height: 1.6; }
+        .sm-footer { text-align: center; }
+
+        .assoc-wrap { position: relative; background: var(--assoc-bg); border-radius: 30px; padding: clamp(50px, 8vw, 80px) 5%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; border: 1px solid rgba(72,169,197,.2); overflow: hidden; box-shadow: inset 0 0 100px rgba(0,240,255,0.03); }
+        .assoc-bg-glow { position: absolute; top: -30%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(72,169,197,.15) 0%, transparent 70%); filter: blur(80px); }
+        .assoc-title { position: relative; z-index: 1; }
+        .assoc-title h2 { font-size: clamp(2rem,5vw,3.2rem); margin-bottom: 20px; color: #fff; line-height: 1.1; }
+        .assoc-title p { color: rgba(255,255,255,.8); font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.8; margin-bottom: 30px; }
+        .assoc-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; position: relative; z-index: 1; }
+        .assoc-feat-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 25px 15px; border-radius: 16px; text-align: center; transition: all 0.4s; backdrop-filter: blur(10px); cursor: pointer; }
+        .assoc-feat-card i { font-size: 2.2rem; color: var(--cyan); margin-bottom: 15px; display: block; }
+        .assoc-feat-card h5 { color: #fff; font-size: 1rem; font-family: 'Outfit', sans-serif; font-weight: 500; letter-spacing: 0.5px; }
+        .assoc-feat-card:hover { transform: translateY(-10px); background: rgba(0,240,255,0.05); border-color: var(--cyan); box-shadow: 0 15px 40px rgba(0,240,255,0.1); }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .gal-item { border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 4/3; border: 1px solid var(--border-color); background: var(--glass-bg); }
@@ -225,17 +261,6 @@
         .gal-overlay p { font-size: 0.85rem; color: #fff; transform: translateY(20px); transition: transform 0.4s 0.1s; }
         .gal-item:hover .gal-overlay h3, .gal-item:hover .gal-overlay p { transform: translateY(0); }
 
-        .assoc-wrap { position: relative; background: var(--assoc-bg); border-radius: 30px; padding: clamp(50px, 8vw, 80px) 5%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; border: 1px solid rgba(72,169,197,.2); overflow: hidden; box-shadow: inset 0 0 100px rgba(0,240,255,0.03); }
-        .assoc-bg-glow { position: absolute; top: -30%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(72,169,197,.15) 0%, transparent 70%); filter: blur(80px); }
-        .assoc-title { position: relative; z-index: 1; }
-        .assoc-title h2 { font-size: clamp(2rem,5vw,3.2rem); margin-bottom: 20px; color: #fff; line-height: 1.1; }
-        .assoc-title p { color: rgba(255,255,255,.8); font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.8; margin-bottom: 30px; }
-        .assoc-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; position: relative; z-index: 1; }
-        .assoc-feat-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 25px 15px; border-radius: 16px; text-align: center; transition: all 0.4s; backdrop-filter: blur(10px); }
-        .assoc-feat-card i { font-size: 2.2rem; color: var(--cyan); margin-bottom: 15px; display: block; }
-        .assoc-feat-card h5 { color: #fff; font-size: 1rem; font-family: 'Outfit', sans-serif; font-weight: 500; letter-spacing: 0.5px; }
-        .assoc-feat-card:hover { transform: translateY(-10px); background: rgba(0,240,255,0.05); border-color: var(--cyan); box-shadow: 0 15px 40px rgba(0,240,255,0.1); }
-
         .partners-section { background: var(--bg-alt); padding: 50px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden; transition: background 0.4s; }
         .partners-marquee { display: flex; gap: 30px; overflow: hidden; user-select: none; }
         .marquee-track { flex-shrink: 0; display: flex; align-items: center; justify-content: space-around; gap: 30px; min-width: 100%; animation: scrollMarquee 40s linear infinite; }
@@ -243,6 +268,21 @@
         @keyframes scrollMarquee { from{transform:translateX(0)} to{transform:translateX(-100%)} }
         .partner-logo { background: var(--partner-logo-bg); padding: 15px 25px; border-radius: 16px; display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--heading-color); font-size: clamp(0.85rem, 1.5vw, 1rem); border: 1px solid var(--border-color); white-space: nowrap; transition: all .4s; }
         .partner-logo:hover { border-color: var(--cyan); color: var(--cyan); transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,.2); }
+
+        .contact-form-section { background: var(--bg-main); padding: 100px 5%; display: flex; flex-direction: column; align-items: center; transition: background 0.4s; }
+        .contact-wrapper { width: 100%; max-width: 900px; background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: 24px; padding: 50px; box-shadow: var(--card-shadow); transition: all 0.4s; }
+        .contact-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .input-group { display: flex; flex-direction: column; }
+        .input-group.full-width { grid-column: 1 / -1; }
+        .input-group input, .input-group textarea, .input-group select { width: 100%; background: rgba(0,0,0,0.1); border: 1px solid rgba(72,169,197,0.3); border-radius: 12px; padding: 18px 20px; color: var(--text-main); font-family: 'Outfit', sans-serif; font-size: 1rem; transition: all 0.3s; outline: none; appearance: none; }
+        .input-group select option { background: var(--bg-main); color: var(--text-main); }
+        body.light-theme .input-group input, body.light-theme .input-group textarea, body.light-theme .input-group select { background: rgba(255,255,255,0.5); border-color: rgba(31,43,91,0.2); }
+        body.light-theme .input-group select option { background: #ffffff; }
+        .input-group input:focus, .input-group textarea:focus, .input-group select:focus { border-color: var(--cyan); box-shadow: 0 0 15px rgba(0,240,255,0.15); background: rgba(0,240,255,0.03); }
+        .input-group input::placeholder, .input-group textarea::placeholder { color: var(--text-muted); }
+        .submit-wrap { grid-column: 1 / -1; text-align: center; margin-top: 10px; }
+        .select-wrapper { position: relative; }
+        .select-wrapper::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--cyan); pointer-events: none; }
 
         .floating-widget { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 15px; }
         .widget-options { display: flex; flex-direction: column; gap: 12px; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.8); transition: all .4s cubic-bezier(.68,-.55,.265,1.55); transform-origin: bottom; }
@@ -309,9 +349,17 @@
             .showcase-card h3 { font-size: 1.05rem; }
             .showcase-card p { font-size: 0.85rem; }
             
+            .upcoming-grid { grid-template-columns: 1fr; gap: 20px; }
+            .conf-modal-box, .srv-modal-box { padding: 30px 20px; }
+            .conf-modal-header h3, .srv-modal-box h3 { font-size: 1.4rem; }
+            .sm-gallery { grid-template-columns: 1fr; }
+            
             .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
             .gal-item { border-radius: 12px; }
             .assoc-features { grid-template-columns: repeat(2, 1fr); }
+            
+            .contact-form-grid { grid-template-columns: 1fr; }
+            .contact-wrapper { padding: 30px 20px; }
         }
 
         @media (max-width: 576px) {
@@ -345,6 +393,42 @@
         </div>
     </div>
 
+    <div class="conf-modal-overlay" id="conf-modal">
+        <div class="conf-modal-box">
+            <button class="conf-modal-close"><i class="fas fa-times"></i></button>
+            <div class="conf-modal-header">
+                <div class="conf-modal-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3 id="m-title"></h3>
+            </div>
+            <div class="conf-modal-body">
+                <p id="m-desc"></p>
+                <ul class="conf-modal-details">
+                    <li><i class="fas fa-map-marker-alt"></i> <span id="m-loc"></span></li>
+                    <li><i class="fas fa-clock"></i> <span id="m-date"></span></li>
+                </ul>
+            </div>
+            <div class="conf-modal-footer">
+                <a href="#" id="m-link" target="_blank" class="magnetic-btn">View Website</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="srv-modal-overlay" id="srv-modal">
+        <div class="srv-modal-box">
+            <button class="srv-modal-close"><i class="fas fa-times"></i></button>
+            <h3 id="sm-title"></h3>
+            <p id="sm-desc"></p>
+            <div class="sm-gallery" id="sm-gallery"></div>
+            <div class="sm-process">
+                <h4>How to Request</h4>
+                <p id="sm-process-text"></p>
+            </div>
+            <div class="sm-footer">
+                <a href="#contact" class="magnetic-btn" onclick="document.querySelector('.srv-modal-close').click();">Request Service</a>
+            </div>
+        </div>
+    </div>
+
     <div class="floating-widget" id="floating-widget">
         <div class="widget-options">
             <a href="https://wa.me/96555858688" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
@@ -365,8 +449,10 @@
             <a href="#showcase">Tangibles</a>
             <a href="#pillars">Pillars</a>
             <a href="#services">Services</a>
+            <a href="#upcoming">Upcoming</a>
             <a href="#association">Society Mgt</a>
             <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
             <button class="theme-toggle" id="theme-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
         </nav>
         <div style="display:flex;gap:15px;align-items:center;">
@@ -380,6 +466,7 @@
         <a href="#showcase" class="mobile-link">Tangibles</a>
         <a href="#pillars" class="mobile-link">Pillars</a>
         <a href="#services" class="mobile-link">Services</a>
+        <a href="#upcoming" class="mobile-link">Upcoming</a>
         <a href="#association" class="mobile-link">Society Mgt</a>
         <a href="#gallery" class="mobile-link">Gallery</a>
         <a href="#contact" class="mobile-link">Contact</a>
@@ -456,32 +543,32 @@
         </div>
         <div class="showcase-wrapper">
             <div class="showcase-grid">
-                <div class="showcase-card">
+                <div class="showcase-card open-srv-modal" data-title="Immersive LED & AV" data-desc="We provide state-of-the-art audiovisual solutions, including high-definition LED screens, live IMAG feeds, and flawless sound engineering to ensure your message is delivered with maximum impact." data-images="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80" data-process="Select 'Specific Service Request' in the contact form, mention 'LED & AV' and provide your venue dimensions and audience size.">
                     <div class="showcase-icon"><i class="fas fa-desktop"></i></div>
                     <h3>Immersive LED & AV</h3>
                     <p>High-definition LED screens and state-of-the-art audiovisual setups.</p>
                 </div>
-                <div class="showcase-card">
+                <div class="showcase-card open-srv-modal" data-title="Honorary Shields" data-desc="Recognize excellence with our bespoke, premium trophies and honorary shields. Crafted with precision, these awards reflect the prestige of your organization and the magnitude of the achievement." data-images="https://images.unsplash.com/photo-1561489422-45de3d015e3e?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1579547945413-497e1b99ce12?auto=format&fit=crop&w=400&q=80" data-process="Contact us with your design requirements, quantity, and deadline for a custom quotation.">
                     <div class="showcase-icon"><i class="fas fa-trophy"></i></div>
                     <h3>Honorary Shields</h3>
                     <p>Custom-crafted, premium trophies and awards designed to honor excellence.</p>
                 </div>
-                <div class="showcase-card">
+                <div class="showcase-card open-srv-modal" data-title="Elite Print & Branding" data-desc="Complete event identity execution. From sophisticated abstract booklets and name badges to large-scale venue signage and stage backdrops, we ensure brand consistency." data-images="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=400&q=80" data-process="Share your brand guidelines and print material requirements through our contact portal.">
                     <div class="showcase-icon"><i class="fas fa-print"></i></div>
                     <h3>Elite Print & Branding</h3>
                     <p>Flawless event identity execution, from abstract booklets to venue signage.</p>
                 </div>
-                <div class="showcase-card">
+                <div class="showcase-card open-srv-modal" data-title="Premium Giveaways" data-desc="Elevate the delegate experience with carefully curated promotional gifts and conference kits. We source high-quality items that leave a lasting, professional impression." data-images="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Request our latest giveaways catalog via the contact form.">
                     <div class="showcase-icon"><i class="fas fa-gift"></i></div>
                     <h3>Premium Giveaways</h3>
                     <p>Carefully curated promotional gifts reflecting prestige and professionalism.</p>
                 </div>
-                <div class="showcase-card">
+                <div class="showcase-card open-srv-modal" data-title="Event Mobile Apps" data-desc="Digital transformation for your event. Custom mobile applications featuring real-time agendas, speaker bios, interactive floor plans, live polling, and networking capabilities." data-images="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Provide your event scope and required app features to receive a technical proposal.">
                     <div class="showcase-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Event Mobile Apps</h3>
                     <p>Custom mobile applications with networking & live polling.</p>
                 </div>
-                <div class="showcase-card">
+                <div class="showcase-card open-srv-modal" data-title="Visual Production" data-desc="Capture the essence of your congress. We offer professional photography, cinematic event highlight reels, and detailed medical/scientific documentary production." data-images="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1475721025505-c31da16c60e1?auto=format&fit=crop&w=400&q=80" data-process="Specify your coverage duration and output requirements (photos, highlight videos, full recordings).">
                     <div class="showcase-icon"><i class="fas fa-camera"></i></div>
                     <h3>Visual Production</h3>
                     <p>Professional photography and cinematic medical documentaries.</p>
@@ -519,23 +606,51 @@
             <h2 class="sec-title split-text">Our Arsenal</h2>
         </div>
         <div class="services-grid stagger-grid">
-            <div class="srv-card"><div class="card-num">01</div><div class="srv-icon"><i class="fas fa-building"></i></div><h3>Venue Selection</h3><ul class="srv-list"><li>Venues aligned with vision</li><li>Readiness assessment</li><li>Contract negotiation</li></ul></div>
-            <div class="srv-card"><div class="card-num">02</div><div class="srv-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>Financial Mgt.</h3><ul class="srv-list"><li>Detailed budget prep</li><li>Secure payment systems</li><li>Full financial reporting</li></ul></div>
-            <div class="srv-card"><div class="card-num">03</div><div class="srv-icon"><i class="fas fa-users"></i></div><h3>Secretariat</h3><ul class="srv-list"><li>Executive team formation</li><li>Protocol support</li><li>Admin coordination</li></ul></div>
-            <div class="srv-card"><div class="card-num">04</div><div class="srv-icon"><i class="fas fa-bullhorn"></i></div><h3>Marketing</h3><ul class="srv-list"><li>Targeted strategies</li><li>Visual media coverage</li><li>Medical documentaries</li></ul></div>
-            <div class="srv-card"><div class="card-num">05</div><div class="srv-icon"><i class="fas fa-laptop"></i></div><h3>Digital Solutions</h3><ul class="srv-list"><li>E-registration systems</li><li>Event websites & apps</li><li>Smart attendance</li></ul></div>
-            <div class="srv-card"><div class="card-num">06</div><div class="srv-icon"><i class="fas fa-microscope"></i></div><h3>Scientific Prog.</h3><ul class="srv-list"><li>Abstract portals</li><li>Peer evaluation systems</li><li>Digital poster sessions</li></ul></div>
-            <div class="srv-card"><div class="card-num">07</div><div class="srv-icon"><i class="fas fa-id-card"></i></div><h3>Registration Exp.</h3><ul class="srv-list"><li>Flexible categories</li><li>Self-service badges</li><li>Group management</li></ul></div>
-            <div class="srv-card"><div class="card-num">08</div><div class="srv-icon"><i class="fas fa-hotel"></i></div><h3>Hospitality</h3><ul class="srv-list"><li>Hotel bookings & blocks</li><li>Electronic guest portals</li><li>VIP airport transfers</li></ul></div>
-            <div class="srv-card"><div class="card-num">09</div><div class="srv-icon"><i class="fas fa-store"></i></div><h3>Sponsorship</h3><ul class="srv-list"><li>Package design</li><li>Exhibition booth sales</li><li>Technical specs support</li></ul></div>
-            <div class="srv-card"><div class="card-num">10</div><div class="srv-icon"><i class="fas fa-paint-roller"></i></div><h3>Creative & Print</h3><ul class="srv-list"><li>Graphic design suite</li><li>Abstract booklets</li><li>Honorary awards</li></ul></div>
-            <div class="srv-card"><div class="card-num">11</div><div class="srv-icon"><i class="fas fa-bus"></i></div><h3>Social Programs</h3><ul class="srv-list"><li>Cultural & city tours</li><li>Recreational activities</li><li>Internal transfers</li></ul></div>
-            <div class="srv-card"><div class="card-num">12</div><div class="srv-icon"><i class="fas fa-cogs"></i></div><h3>On-Site Exec.</h3><ul class="srv-list"><li>Team management</li><li>AV & IMAG live feeds</li><li>VIP guest reception</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Venue Selection" data-desc="We meticulously source and secure venues that align perfectly with your event's scale, prestige, and logistical requirements, handling all contract negotiations." data-images="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Select 'Full Conference Organization' in the contact form to begin your venue search."><div class="card-num">01</div><div class="srv-icon"><i class="fas fa-building"></i></div><h3>Venue Selection</h3><ul class="srv-list"><li>Venues aligned with vision</li><li>Readiness assessment</li><li>Contract negotiation</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Financial Management" data-desc="Comprehensive financial oversight, from initial budget preparation to secure payment gateway integration and transparent post-event financial reporting." data-images="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1475721025505-c31da16c60e1?auto=format&fit=crop&w=400&q=80" data-process="Discuss your budget constraints and goals during our initial consultation."><div class="card-num">02</div><div class="srv-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>Financial Mgt.</h3><ul class="srv-list"><li>Detailed budget prep</li><li>Secure payment systems</li><li>Full financial reporting</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Secretariat Services" data-desc="Dedicated administrative support teams that handle committee coordination, speaker communications, protocol management, and VIP liaison." data-images="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80" data-process="Request our secretariat tier packages via the contact form."><div class="card-num">03</div><div class="srv-icon"><i class="fas fa-users"></i></div><h3>Secretariat</h3><ul class="srv-list"><li>Executive team formation</li><li>Protocol support</li><li>Admin coordination</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Marketing & PR" data-desc="Strategic multi-channel marketing campaigns designed to maximize delegate attendance, engage sponsors, and elevate the event's public profile." data-images="https://images.unsplash.com/photo-1475721025505-c31da16c60e1?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80" data-process="Share your target audience demographics to receive a marketing proposal."><div class="card-num">04</div><div class="srv-icon"><i class="fas fa-bullhorn"></i></div><h3>Marketing</h3><ul class="srv-list"><li>Targeted strategies</li><li>Visual media coverage</li><li>Medical documentaries</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Digital Solutions" data-desc="Custom-built event websites, advanced e-registration portals, and smart attendance tracking systems using RFID/QR code technology." data-images="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80" data-process="Outline your digital requirements (website, registration, tracking) in your inquiry."><div class="card-num">05</div><div class="srv-icon"><i class="fas fa-laptop"></i></div><h3>Digital Solutions</h3><ul class="srv-list"><li>E-registration systems</li><li>Event websites & apps</li><li>Smart attendance</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Scientific Program" data-desc="End-to-end management of the scientific agenda. We provide secure abstract submission portals, peer-review systems, and interactive digital poster sessions." data-images="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80" data-process="Contact us to schedule a demo of our abstract management system."><div class="card-num">06</div><div class="srv-icon"><i class="fas fa-microscope"></i></div><h3>Scientific Prog.</h3><ul class="srv-list"><li>Abstract portals</li><li>Peer evaluation systems</li><li>Digital poster sessions</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Registration Experience" data-desc="Frictionless onsite and online registration. We manage complex delegate categories, self-service badge printing kiosks, and fast-track VIP lanes." data-images="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=80" data-process="Provide expected attendee numbers to tailor the registration flow."><div class="card-num">07</div><div class="srv-icon"><i class="fas fa-id-card"></i></div><h3>Registration Exp.</h3><ul class="srv-list"><li>Flexible categories</li><li>Self-service badges</li><li>Group management</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Hospitality & Travel" data-desc="Premium logistical support for international guests. We handle hotel block bookings, flight coordination, airport meet-and-greet, and VIP transfers." data-images="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=400&q=80" data-process="Include expected number of international speakers in your request."><div class="card-num">08</div><div class="srv-icon"><i class="fas fa-hotel"></i></div><h3>Hospitality</h3><ul class="srv-list"><li>Hotel bookings & blocks</li><li>Electronic guest portals</li><li>VIP airport transfers</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Sponsorship Sales" data-desc="Maximize event revenue through structured sponsorship packages. We manage exhibition floor plans, booth sales, and ensure sponsors receive premium ROI." data-images="https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1475721025505-c31da16c60e1?auto=format&fit=crop&w=400&q=80" data-process="Request a consultation to build your event's sponsorship prospectus."><div class="card-num">09</div><div class="srv-icon"><i class="fas fa-store"></i></div><h3>Sponsorship</h3><ul class="srv-list"><li>Package design</li><li>Exhibition booth sales</li><li>Technical specs support</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Creative & Print" data-desc="Our in-house design studio handles all visual assets, from the initial event logo concept to the final printed conference materials and stage design." data-images="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80" data-process="Select 'Specific Service Request' and choose Creative & Design."><div class="card-num">10</div><div class="srv-icon"><i class="fas fa-paint-roller"></i></div><h3>Creative & Print</h3><ul class="srv-list"><li>Graphic design suite</li><li>Abstract booklets</li><li>Honorary awards</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="Social Programs" data-desc="Enrich the delegate experience beyond the conference walls. We organize bespoke cultural tours, gala dinners, and recreational networking activities." data-images="https://images.unsplash.com/photo-1475721025505-c31da16c60e1?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Mention your interest in gala dinners or tours when booking a full conference."><div class="card-num">11</div><div class="srv-icon"><i class="fas fa-bus"></i></div><h3>Social Programs</h3><ul class="srv-list"><li>Cultural & city tours</li><li>Recreational activities</li><li>Internal transfers</li></ul></div>
+            <div class="srv-card open-srv-modal" data-title="On-Site Execution" data-desc="Flawless live execution. Our experienced stage managers, technical directors, and ushers ensure every minute of your event runs strictly on schedule." data-images="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=400&q=80" data-process="Our on-site management is included in all Full Conference Organization packages."><div class="card-num">12</div><div class="srv-icon"><i class="fas fa-cogs"></i></div><h3>On-Site Exec.</h3><ul class="srv-list"><li>Team management</li><li>AV & IMAG live feeds</li><li>VIP guest reception</li></ul></div>
+        </div>
+    </section>
+
+    <section id="upcoming" class="section-nav" data-label="Upcoming">
+        <span class="sec-label-badge">05 / Future</span>
+        <div class="sec-header">
+            <span class="sec-subtitle">What's Next</span>
+            <h2 class="sec-title split-text">Upcoming Congresses</h2>
+        </div>
+        <div class="upcoming-grid stagger-grid">
+            <div class="up-card">
+                <div class="up-logo"><i class="fas fa-brain"></i></div>
+                <div class="up-date">Nov 10-12, 2026</div>
+                <h3>MENA Neurology Summit</h3>
+                <button class="up-btn open-conf-modal" data-title="MENA Neurology Summit" data-loc="Sheikh Jaber Al-Ahmad Cultural Centre, Kuwait" data-date="November 10-12, 2026" data-desc="A premier gathering of neurological experts focusing on the latest advancements in neurodegenerative diseases, stroke management, and cognitive disorders." data-link="#">View Details <i class="fas fa-plus"></i></button>
+            </div>
+            <div class="up-card">
+                <div class="up-logo"><i class="fas fa-tooth"></i></div>
+                <div class="up-date">Dec 05-07, 2026</div>
+                <h3>Global Dental Excellence</h3>
+                <button class="up-btn open-conf-modal" data-title="Global Dental Excellence" data-loc="Waldorf Astoria, Kuwait" data-date="December 05-07, 2026" data-desc="Exploring the future of digital dentistry, implantology, and aesthetic restorations with hands-on workshops and international keynote speakers." data-link="#">View Details <i class="fas fa-plus"></i></button>
+            </div>
+            <div class="up-card">
+                <div class="up-logo"><i class="fas fa-baby"></i></div>
+                <div class="up-date">Jan 18-20, 2027</div>
+                <h3>Pediatric & Neonatal Care</h3>
+                <button class="up-btn open-conf-modal" data-title="Pediatric & Neonatal Care" data-loc="Four Seasons Hotel, Kuwait" data-date="January 18-20, 2027" data-desc="Addressing critical challenges in neonatal intensive care and pediatric surgery, fostering multidisciplinary approaches to child health." data-link="#">View Details <i class="fas fa-plus"></i></button>
+            </div>
         </div>
     </section>
 
     <section id="association" class="section-nav" data-label="Society">
-        <span class="sec-label-badge">05 / Management</span>
+        <span class="sec-label-badge">06 / Management</span>
         <div class="assoc-wrap fade-up-elem">
             <div class="assoc-bg-glow"></div>
             <div class="assoc-title">
@@ -547,18 +662,18 @@
                 </div>
             </div>
             <div class="assoc-features">
-                <div class="assoc-feat-card"><i class="fas fa-user-tie"></i><h5>Dedicated Secretariat</h5></div>
-                <div class="assoc-feat-card"><i class="fas fa-id-badge"></i><h5>Membership Portal</h5></div>
-                <div class="assoc-feat-card"><i class="fas fa-chart-line"></i><h5>Strategic Growth</h5></div>
-                <div class="assoc-feat-card"><i class="fas fa-globe"></i><h5>Global MoUs</h5></div>
-                <div class="assoc-feat-card"><i class="fas fa-video"></i><h5>Webinars & Symposia</h5></div>
-                <div class="assoc-feat-card"><i class="fas fa-vote-yea"></i><h5>Elections Mgt.</h5></div>
+                <div class="assoc-feat-card open-srv-modal" data-title="Dedicated Secretariat" data-desc="Provide your medical society with a permanent, professional point of contact. We handle day-to-day administrative tasks, member inquiries, and official correspondence." data-images="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80" data-process="Contact us to discuss establishing a dedicated office for your association."><i class="fas fa-user-tie"></i><h5>Dedicated Secretariat</h5></div>
+                <div class="assoc-feat-card open-srv-modal" data-title="Membership Portal" data-desc="Custom-built digital platforms to manage society memberships, automate renewals, process fees securely, and maintain an up-to-date professional directory." data-images="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Request a demonstration of our membership management software."><i class="fas fa-id-badge"></i><h5>Membership Portal</h5></div>
+                <div class="assoc-feat-card open-srv-modal" data-title="Strategic Growth" data-desc="We consult with society boards to develop long-term growth strategies, increase membership engagement, and diversify revenue streams through educational initiatives." data-images="https://images.unsplash.com/photo-1475721025505-c31da16c60e1?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=400&q=80" data-process="Schedule a strategic planning session with our executive team."><i class="fas fa-chart-line"></i><h5>Strategic Growth</h5></div>
+                <div class="assoc-feat-card open-srv-modal" data-title="Global MoUs" data-desc="Expand your society's global footprint. We facilitate and draft Memorandums of Understanding (MoUs) with international medical bodies to foster cross-border collaboration." data-images="https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Indicate your target global regions when reaching out."><i class="fas fa-globe"></i><h5>Global MoUs</h5></div>
+                <div class="assoc-feat-card open-srv-modal" data-title="Webinars & Symposia" data-desc="Continuous medical education requires continuous platforms. We manage year-round virtual webinars and localized symposia to keep your members updated." data-images="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80" data-process="Submit your scientific calendar to align webinar production schedules."><i class="fas fa-video"></i><h5>Webinars & Symposia</h5></div>
+                <div class="assoc-feat-card open-srv-modal" data-title="Elections Mgt." data-desc="Transparent, secure, and legally compliant management of society board elections. We provide secure digital voting systems and independent auditing." data-images="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=80,https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=400&q=80" data-process="Contact us at least 3 months prior to your general assembly."><i class="fas fa-vote-yea"></i><h5>Elections Mgt.</h5></div>
             </div>
         </div>
     </section>
 
     <section id="gallery" style="background:var(--bg-alt);" class="section-nav" data-label="Gallery">
-        <span class="sec-label-badge">06 / Visuals</span>
+        <span class="sec-label-badge">07 / Visuals</span>
         <div class="sec-header">
             <span class="sec-subtitle">Our Legacy</span>
             <h2 class="sec-title split-text">Moments Captured</h2>
@@ -591,7 +706,7 @@
         </div>
     </section>
 
-    <div class="partners-section section-nav" data-label="Partners">
+    <div class="partners-section">
         <div class="sec-header" style="margin-bottom: 30px;">
             <span class="sec-subtitle">Strategic Trust</span>
             <h2 class="sec-title split-text" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Trusted By Medical Societies</h2>
@@ -616,7 +731,58 @@
         </div>
     </div>
 
-    <footer id="contact" class="section-nav" data-label="Contact">
+    <section id="contact" class="contact-form-section section-nav" data-label="Contact">
+        <span class="sec-label-badge" style="left: 50%; transform: translateX(-50%); text-align: center; top: 40px;">08 / Connect</span>
+        <div class="sec-header">
+            <span class="sec-subtitle">Get In Touch</span>
+            <h2 class="sec-title split-text">Start Your Journey</h2>
+        </div>
+        <div class="contact-wrapper fade-up-elem">
+            <form onsubmit="event.preventDefault();" class="contact-form-grid">
+                <div class="input-group">
+                    <input type="text" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <input type="email" required placeholder="Email Address">
+                </div>
+                <div class="input-group full-width">
+                    <input type="tel" required placeholder="Phone Number">
+                </div>
+                <div class="input-group full-width select-wrapper">
+                    <select id="inquiry-type" required onchange="toggleConfFields()">
+                        <option value="" disabled selected>Nature of Inquiry</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="service">Specific Service Request</option>
+                        <option value="conference">Full Conference Organization</option>
+                    </select>
+                </div>
+                
+                <div id="conf-fields" style="display: none; grid-column: 1 / -1; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div class="input-group full-width">
+                        <input type="text" placeholder="Preferred Hotel / Venue Location">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="Expected Attendees">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="Expected Speakers">
+                    </div>
+                    <div class="input-group full-width">
+                        <input type="text" placeholder="AV & Screen Requirements (e.g., LED Size, Audio)">
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <textarea required placeholder="Your Message" rows="4"></textarea>
+                </div>
+                <div class="submit-wrap">
+                    <button type="submit" class="magnetic-btn">Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
         <div class="foot-content">
             <div class="fade-up-elem">
                 <div class="foot-logo">
@@ -649,6 +815,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
+    function toggleConfFields() {
+        const type = document.getElementById('inquiry-type').value;
+        const fields = document.getElementById('conf-fields');
+        if (type === 'conference') {
+            fields.style.display = window.innerWidth <= 768 ? 'grid' : 'grid';
+            gsap.fromTo(fields, {opacity: 0, y: -20}, {opacity: 1, y: 0, duration: 0.4, ease: "power2.out"});
+        } else {
+            gsap.to(fields, {opacity: 0, y: -20, duration: 0.3, onComplete: () => { fields.style.display = 'none'; }});
+        }
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     window.addEventListener('load', () => {
@@ -703,7 +880,7 @@
         };
         requestAnimationFrame(render);
 
-        document.querySelectorAll('a, button, .partner-logo, .showcase-card, .srv-card, .value-box, .main-fab, .mv-card, .gal-item, .assoc-feat-card').forEach(el => {
+        document.querySelectorAll('a, button, .partner-logo, .showcase-card, .srv-card, .value-box, .main-fab, .mv-card, .gal-item, .assoc-feat-card, .up-card').forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
@@ -720,8 +897,9 @@
             });
         });
 
-        const cards = document.querySelectorAll('.srv-card, .mv-card, .assoc-feat-card');
+        const cards = document.querySelectorAll('.srv-card, .mv-card, .assoc-feat-card, .up-card');
         cards.forEach(card => {
+            if(card.classList.contains('open-srv-modal')) return; 
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left; const y = e.clientY - rect.top;
@@ -837,6 +1015,50 @@
             }
         });
     }
+
+    const confModal = document.getElementById('conf-modal');
+    const srvModal = document.getElementById('srv-modal');
+    
+    document.querySelectorAll('.open-conf-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('m-title').innerText = btn.getAttribute('data-title');
+            document.getElementById('m-desc').innerText = btn.getAttribute('data-desc');
+            document.getElementById('m-loc').innerText = btn.getAttribute('data-loc');
+            document.getElementById('m-date').innerText = btn.getAttribute('data-date');
+            document.getElementById('m-link').href = btn.getAttribute('data-link');
+            
+            confModal.classList.add('active');
+            gsap.fromTo(confModal.querySelector('.conf-modal-box'), {y: 50, opacity: 0, scale: 0.9}, {y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.5)'});
+        });
+    });
+    
+    document.querySelector('#conf-modal .conf-modal-close').addEventListener('click', () => {
+        gsap.to(confModal.querySelector('.conf-modal-box'), {y: 50, opacity: 0, scale: 0.9, duration: 0.4, ease: 'power2.in', onComplete: () => confModal.classList.remove('active')});
+    });
+
+    document.querySelectorAll('.open-srv-modal').forEach(el => {
+        el.addEventListener('click', () => {
+            document.getElementById('sm-title').innerText = el.getAttribute('data-title');
+            document.getElementById('sm-desc').innerText = el.getAttribute('data-desc');
+            document.getElementById('sm-process-text').innerText = el.getAttribute('data-process');
+            
+            const imgs = el.getAttribute('data-images');
+            const gal = document.getElementById('sm-gallery');
+            gal.innerHTML = '';
+            if(imgs) {
+                imgs.split(',').forEach(src => {
+                    gal.innerHTML += `<img src="${src.trim()}" alt="Service">`;
+                });
+            }
+            
+            srvModal.classList.add('active');
+            gsap.fromTo(srvModal.querySelector('.srv-modal-box'), {y: 50, opacity: 0, scale: 0.9}, {y: 0, opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.5)'});
+        });
+    });
+
+    document.querySelector('#srv-modal .srv-modal-close').addEventListener('click', () => {
+        gsap.to(srvModal.querySelector('.srv-modal-box'), {y: 50, opacity: 0, scale: 0.9, duration: 0.4, ease: 'power2.in', onComplete: () => srvModal.classList.remove('active')});
+    });
     </script>
 </body>
 </html>
