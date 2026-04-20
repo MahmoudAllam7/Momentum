@@ -99,7 +99,7 @@
         .logo img { height: 45px; filter: var(--logo-filter); transition: .3s; }
         .logo img:hover { transform: scale(1.05); }
 
-        .desktop-nav { display: flex; gap: 35px; list-style: none; align-items: center; }
+        .desktop-nav { display: flex; gap: 30px; list-style: none; align-items: center; }
         .desktop-nav a { color: var(--heading-color); text-decoration: none; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; padding: 5px 0; transition: color .3s; }
         .desktop-nav a::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--cyan); transition: width .3s ease; }
         .desktop-nav a:hover { color: var(--cyan); }
@@ -288,6 +288,18 @@
         .partner-logo { background: var(--partner-logo-bg); padding: 15px 25px; border-radius: 16px; display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--heading-color); font-size: clamp(0.85rem, 1.5vw, 1rem); border: 1px solid var(--border-color); white-space: nowrap; transition: all .4s; }
         .partner-logo:hover { border-color: var(--cyan); color: var(--cyan); transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,.2); }
 
+        .cert-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: 24px; padding: 40px; max-width: 900px; margin: 0 auto; box-shadow: var(--card-shadow); transition: all 0.4s; }
+        .cert-info { display: flex; flex-direction: column; justify-content: center; }
+        .cert-info i { font-size: 3rem; color: var(--cyan); margin-bottom: 20px; }
+        .cert-info h3 { font-size: 1.5rem; color: var(--heading-color); margin-bottom: 15px; }
+        .cert-info p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
+        .cert-form { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+        .cert-form .input-group input, .cert-form .input-group select { width: 100%; background: rgba(0,0,0,0.1); border: 1px solid rgba(72,169,197,0.3); border-radius: 12px; padding: 18px 20px; color: var(--text-main); font-family: 'Outfit', sans-serif; font-size: 1rem; transition: all 0.3s; outline: none; appearance: none; }
+        .cert-form .input-group select option { background: var(--bg-main); color: var(--text-main); }
+        body.light-theme .cert-form .input-group input, body.light-theme .cert-form .input-group select { background: rgba(255,255,255,0.5); border-color: rgba(31,43,91,0.2); }
+        body.light-theme .cert-form .input-group select option { background: #ffffff; color: #000; }
+        .cert-form .input-group input:focus, .cert-form .input-group select:focus { border-color: var(--cyan); box-shadow: 0 0 15px rgba(0,240,255,0.15); background: rgba(0,240,255,0.03); }
+
         .contact-form-section { background: var(--bg-main); padding: 100px 5%; display: flex; flex-direction: column; align-items: center; transition: background 0.4s; }
         .contact-wrapper { width: 100%; max-width: 900px; background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); border-radius: 24px; padding: 50px; box-shadow: var(--card-shadow); transition: all 0.4s; }
         
@@ -384,6 +396,9 @@
             .gal-item { border-radius: 12px; }
             .assoc-features { grid-template-columns: repeat(2, 1fr); }
             
+            .cert-container { grid-template-columns: 1fr; padding: 30px 20px; }
+            .cert-info { text-align: center; }
+
             .contact-form-grid { grid-template-columns: 1fr; }
             .contact-wrapper { padding: 30px 20px; }
             
@@ -488,6 +503,7 @@
             <a href="#upcoming">Upcoming</a>
             <a href="#association">Society Mgt</a>
             <a href="#gallery">Gallery</a>
+            <a href="#certificates">Certificates</a>
             <a href="#contact">Contact</a>
             <button class="theme-toggle" id="theme-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
         </nav>
@@ -505,6 +521,7 @@
         <a href="#upcoming" class="mobile-link">Upcoming</a>
         <a href="#association" class="mobile-link">Society Mgt</a>
         <a href="#gallery" class="mobile-link">Gallery</a>
+        <a href="#certificates" class="mobile-link">Certificates</a>
         <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
@@ -773,8 +790,37 @@
         </div>
     </div>
 
+    <section id="certificates" class="section-nav" data-label="Certificates" style="background:var(--bg-alt);">
+        <span class="sec-label-badge">08 / Credentials</span>
+        <div class="sec-header">
+            <span class="sec-subtitle">Accreditation Hub</span>
+            <h2 class="sec-title split-text">Claim Your Certificate</h2>
+        </div>
+        <div class="cert-container fade-up-elem">
+            <div class="cert-info">
+                <i class="fas fa-award"></i>
+                <h3>CME & Attendance</h3>
+                <p>Access your verified medical education certificates from all Momentum-managed congresses in one centralized portal.</p>
+            </div>
+            <form class="cert-form" onsubmit="event.preventDefault();">
+                <div class="input-group select-wrapper">
+                    <select required>
+                        <option value="" disabled selected>Select Congress</option>
+                        <option value="1">MENA Neurology Summit 2026</option>
+                        <option value="2">Global Dental Excellence 2026</option>
+                        <option value="3">Pediatric & Neonatal Care 2027</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="text" required placeholder="Registration ID or Phone Number">
+                </div>
+                <button type="submit" class="magnetic-btn" style="width: 100%; justify-content: center;">Verify & Download <i class="fas fa-download"></i></button>
+            </form>
+        </div>
+    </section>
+
     <section id="contact" class="contact-form-section section-nav" data-label="Contact">
-        <span class="sec-label-badge" style="left: 50%; transform: translateX(-50%); text-align: center; top: 40px;">08 / Connect</span>
+        <span class="sec-label-badge" style="left: 50%; transform: translateX(-50%); text-align: center; top: 40px;">09 / Connect</span>
         <div class="sec-header">
             <span class="sec-subtitle">Get In Touch</span>
             <h2 class="sec-title split-text">Start Your Journey</h2>
